@@ -1,0 +1,77 @@
+/* BUTTONS */
+
+button {
+    background-color: #3b80b4 ;
+    color: white;
+    border-radius: 6px;
+    height: 25px;
+    border-style: none;
+    outline-style: none;
+  }
+  
+  button:hover {
+    background-color: #2b5e84;
+    color: #fff;
+  }
+  
+  
+  .formButton {
+    border-radius: 6px ; 
+    width: 100px;
+    height: 30px;
+  }
+  
+  .formButtonReset {
+    border-radius: 6px ; 
+    width: 100px;
+    height: 30px;
+    background-color:red;
+    color: rgb(255, 255, 255);
+    margin: 0px 5px 0px 10px;
+  }
+  
+  .deleteButton {
+    background: rgb(255, 0, 0);
+    color: rgb(255, 255, 255);
+  }
+  
+  .loggerButton {
+    width: 60px;
+    height: 30px;
+  }
+  
+  .signUpButton { 
+    margin: 0px 0px 0px 10px;
+    width: 65px;
+    height: 35px;
+    background: white;
+    color: black;
+    border: 1px solid black;
+  }
+
+  /* IMAGES */
+
+
+.siteLogo {
+  height: 80px;
+}
+
+
+.TableCouponImg {
+  margin: 0px;
+  padding: 0px;
+  height:60px;
+  height:60px;
+  transition: transform .2s; 
+}
+
+.TableCouponImg:hover {
+  transform: scale(2);
+}
+  
+/* Tables */
+
+.tableHead {
+  background-color: #81C3D7;
+  
+}

@@ -1,0 +1,63 @@
+/* MAIN LAYOUT */
+
+.layout {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.4fr 3.4fr 0.2fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "mainHeader"
+      "MainViewRouting"
+      "mainFooter";
+  }
+  
+  .mainHeader { grid-area: mainHeader; }
+  
+  .MainViewRouting { grid-area: MainViewRouting; }
+  
+  .mainFooter { grid-area: mainFooter;}
+
+
+/* HEADER */
+
+.mainHeader {
+    display: grid;
+    grid-template-columns: 0.8fr 4fr 1fr 1.1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "headerLogo headerNavigation headerCart headerClient";
+      position: sticky;
+      
+    top: 0px;
+    background-color: white;
+    border-bottom: 1px solid  rgb(229, 229, 229);
+  }
+  
+  .headerLogo { grid-area: headerLogo; }
+  
+  .headerNavigation { grid-area: headerNavigation; }
+  
+  .headerCart { grid-area: headerCart; }
+  
+  .headerClient { grid-area: headerClient; }
+  
+
+/* FOOTER */  
+
+.mainFooter {
+    border-top: 1px solid rgb(229, 229, 229);
+    background: white;
+    -webkit-box-shadow: 0px -7px 19px 0px #B5B5B5; 
+    box-shadow: 0px -7px 19px 0px #B5B5B5;
+  }
+
+
+
+
+  
+
+  

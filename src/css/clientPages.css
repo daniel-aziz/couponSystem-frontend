@@ -1,0 +1,69 @@
+/* ADMIN */
+
+.adminView {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 0.3fr 1.7fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "adminNavigation adminRouting";
+}
+  
+  
+.adminNavigation {
+     grid-area: adminNavigation; 
+}
+  
+.adminRouting { 
+      grid-area: adminRouting;
+}
+
+  
+/* COMPANY */
+
+.companyView {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 0.3fr 1.7fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "companyNavigation companyRouting";
+}
+  
+  
+.companyNavigation { 
+      grid-area: companyNavigation;
+}
+  
+.companyRouting { 
+    grid-area: companyRouting;
+}
+  
+
+
+/* CUSTOMER */
+  
+.customerView {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 0.3fr 1.7fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "customerNavigation customerRouting";
+}
+  
+  
+.customerNavigation {
+   grid-area: customerNavigation;
+
+}
+  
+  .customerRouting { 
+    grid-area: customerRouting;
+}

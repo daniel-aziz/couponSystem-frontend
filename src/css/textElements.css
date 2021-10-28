@@ -1,0 +1,81 @@
+
+/* H1,H2.. Ect' */
+
+.mainTitle {
+    font-style: italic;
+  }
+  
+  .subTitle  {
+    font-style: normal;
+  }
+  
+  .clientNavTitle {
+    font-style: italic;
+  }
+  
+  /* Links, A, NavLink, Nav */
+  
+  .mainNavBar {
+    margin: 20px 0px 0px 0px; 
+    padding: 0% 0% 10px 0%;
+    font-size: large;
+  }
+  
+  .mainNavLink {
+    display:block;
+    padding: 0;
+    margin: 0% 3% 0 3%;
+    color: rgb(82, 82, 82);
+    font-size: 1.6rem;
+    text-decoration: none;
+  }
+  
+  .mainNavLink:hover {
+    color: #81C3D7;
+  }
+  
+  
+  .sideNavigation {
+    border-right: 1px solid rgb(240, 240, 240);
+    background-color: rgb(250, 250, 250);
+  }
+  
+  .clientNavLink {
+    color: black;
+    font-size: medium;
+  }
+  
+  .clientNavLink:hover {
+    color: #81C3D7;
+  }
+  
+  .genralLink {
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  .genralLink:hover {
+    color: #81C3D7;
+  }
+  
+ 
+  
+  /* Span */
+  
+  .errorMSG {
+    color: red;
+    font-size: small;
+    font-weight: bold;
+  }
+  
+  .cartNumber {
+    color: red;
+    font-weight: bolder;
+  }
+  
+  .linkSprator {
+    font-size: xx-large;
+  }
+  
+  
