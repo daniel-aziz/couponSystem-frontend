@@ -44,7 +44,7 @@ function AdminCompanies(): JSX.Element {
                 notify.success(SysErrs.DATA_RECIVED)
             })
             .catch((error) => {
-                notify.error(errorHelper.getMSG(error));
+               
             })
     }, [Company]);
 

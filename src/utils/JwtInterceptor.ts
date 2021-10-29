@@ -37,10 +37,10 @@ jwtAxios.interceptors.response.use(
                 notify.error(errorHelper.getMSG(error))
                 break;
             case 500: // Internal Server Error 
-                notify.error(errorHelper.getMSG(SysErrs.ISSUE_WITH_SERVER))
+                notify.error(SysErrs.ISSUE_WITH_SERVER)
                 break;
             default:
-                notify.error(errorHelper.getMSG(SysErrs.GENERAL))
+                notify.error(SysErrs.GENERAL)
         }
     }
 

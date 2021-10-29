@@ -27,7 +27,7 @@ export enum SysErrs {
     ADDED_TO_CART = "Item added to cart",
     CART_LIMIT = "Max items to purchase is ",
     ALREADY_IN_CART  = "Item already in cart",
-    LOG_TO_PURCHASE = "Can't add to cart, Only a Logged Customer can add to cart",
+    LOG_TO_PURCHASE = "Can't Purchase, Only a Logged Customer can purchase items.",
     OUT_OF_STOCK = "Coupon out of stock",
 
     SEND_EMAIL_SUCCESSED = "Thank you, we will contact you soon.",

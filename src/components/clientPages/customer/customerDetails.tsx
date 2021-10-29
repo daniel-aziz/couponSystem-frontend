@@ -14,6 +14,7 @@ import Coupon from "../../../models/Coupon";
 import { CategoriesList } from "../../../utils/CategoriesList";
 import { myStore } from "../../../redux/Store";
 import Customer from "../../../models/Customer";
+import TagIcon from "../../../assets/img/tag-icon.png"
 
 
 
@@ -32,7 +33,7 @@ function CustomerDetails(): JSX.Element {
     const URLgetAll = globals.urls.customer + "getAllCoupons/all/"
     const URLgetByCategory = globals.urls.customer + "getAllCoupons/category/" + categoryState;
     const URLgetByPrice = globals.urls.customer + "getAllCoupons/price/" + minPriceState + "/" + maxPriceState;
-    
+
 
     function getName(): string {
         return myStore().store.getState().loggedState.client.name;
@@ -53,7 +54,7 @@ function CustomerDetails(): JSX.Element {
                     })
 
             }).catch((error) => {
-                
+
             })
 
     }, [Customer])
@@ -223,7 +224,10 @@ function CustomerDetails(): JSX.Element {
                                         <TableCell align="left">{item.endDate}</TableCell>
                                         <TableCell align="left">{item.amount} units</TableCell>
                                         <TableCell align="left">{item.price}$</TableCell>
-                                        <TableCell align="left"><img className="TableCouponImg" src={item.image} /></TableCell>
+                                        <TableCell align="left"><img className="TableCouponImg" src={item.image} onError={(args: SyntheticEvent) => {
+                                            (args
+                                                .target as HTMLImageElement).src = TagIcon
+                                        }} /></TableCell>
                                         <TableCell align="left">{item.company.name}</TableCell>
                                     </TableRow>
                                 ))}

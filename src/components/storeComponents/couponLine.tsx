@@ -1,6 +1,8 @@
 import Coupon from "../../models/Coupon";
 import { removeFromCart } from "../../redux/cartState";
 import { myStore } from "../../redux/Store";
+import TagIcon from "../../assets/img/tag-icon.png"
+import { SyntheticEvent } from "react";
 
 interface CouponCardProps {
     coupon: Coupon;
@@ -16,7 +18,8 @@ function CouponLine(props: CouponCardProps): JSX.Element {
         <div className="cardLine">
 
             <div className="lineImg">
-                <img className="cartImg" src={props.coupon.image} />
+                <img className="cartImg" src={props.coupon.image} onError={(args:SyntheticEvent)=>{(args
+                    .target as HTMLImageElement).src = TagIcon}}  />
             </div>
 
             <div className="lineTitle">

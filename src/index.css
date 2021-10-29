@@ -77,4 +77,9 @@ html , body > * {
   text-align: center;
 }
 
+img
+{
+background-image:url('../src/assets/img/tag-icon.png');
+}
+
 

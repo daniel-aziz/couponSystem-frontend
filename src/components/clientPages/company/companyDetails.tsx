@@ -16,6 +16,7 @@ import { SysErrs } from "../../../utils/SysErrs";
 import Coupon from "../../../models/Coupon";
 import { CategoriesList } from "../../../utils/CategoriesList";
 import { myStore } from "../../../redux/Store";
+import TagIcon from "../../../assets/img/tag-icon.png"
 
 
 
@@ -52,7 +53,7 @@ function CompanyDetails(): JSX.Element {
             })
     }, [Company])
 
-    
+
 
     function getByCategory() {
         jwtAxios.post(URLgetByCategory)
@@ -241,7 +242,10 @@ function CompanyDetails(): JSX.Element {
                                         <TableCell align="left">{item.endDate}</TableCell>
                                         <TableCell align="left">{item.amount} units</TableCell>
                                         <TableCell align="left">{item.price}$</TableCell>
-                                        <TableCell align="left"><img className="TableCouponImg" src={item.image} /></TableCell>
+                                        <TableCell align="left"><img className="TableCouponImg" src={item.image} onError={(args: SyntheticEvent) => {
+                                            (args
+                                                .target as HTMLImageElement).src = TagIcon
+                                        }} /></TableCell>
                                         <TableCell align="left">
                                             <button onClick={updateCouponId} value={item.id} >Update</button>
                                         </TableCell>

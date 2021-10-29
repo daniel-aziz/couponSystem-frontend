@@ -59,6 +59,18 @@
     color: #81C3D7;
   }
   
+  .socialLink {
+  transition: 0.3s ease;
+  color: black;
+  border-radius: 50px;
+  padding: 8px;
+  }
+  
+  .socialLink:hover {
+    background-color: #81C3D7;
+    transform: scale(1.2);
+    cursor: pointer;
+}
  
   
   /* Span */

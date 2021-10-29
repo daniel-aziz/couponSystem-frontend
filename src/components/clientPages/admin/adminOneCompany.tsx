@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { SyntheticEvent, useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router";
 import Company from "../../../models/Company";
 import globals from "../../../utils/Globals";
@@ -14,12 +14,13 @@ import notify from "../../../utils/Notify";
 import errorHelper from "../../../utils/ErrorHelper";
 import { SysErrs } from "../../../utils/SysErrs";
 import { Dialog, DialogActions, DialogTitle } from "@mui/material";
+import TagIcon from "../../../assets/img/tag-icon.png"
 
 function CompanyFullDetails(): JSX.Element {
 
     const [companyData, setCompanyData] = useState<Company>(new Company());
     const [open, setOpen] = useState(false);
-    
+
     const { companyId } = useParams<{ companyId?: string }>();
 
     const history = useHistory();
@@ -158,7 +159,7 @@ function CompanyFullDetails(): JSX.Element {
                                         <TableCell align="left">{item.endDate}</TableCell>
                                         <TableCell align="left">{item.amount} units</TableCell>
                                         <TableCell align="left">{item.price}$</TableCell>
-                                        <TableCell align="left"><img className="TableCouponImg" src={item.image} /></TableCell>
+                                        <TableCell align="left"><img className="TableCouponImg" src={item.image} onError={(args: SyntheticEvent) => {(args.target as HTMLImageElement).src = TagIcon}} /></TableCell>
                                         <TableCell align="left">{companyData.name}</TableCell>
                                     </TableRow>
                                 ))}

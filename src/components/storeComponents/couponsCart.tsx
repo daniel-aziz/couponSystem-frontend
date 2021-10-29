@@ -14,7 +14,7 @@ import { useSelector } from "react-redux";
 function CouponsCart(): JSX.Element {
 
     useSelector(myStore().store.getState)
-    
+
     var totalPrice = 0;
 
     const URLpurchaseCoupon = globals.urls.customer + "purchaseCoupon/"
@@ -42,17 +42,21 @@ function CouponsCart(): JSX.Element {
     }
 
     function buyAll() {
-        myStore().store.getState().cartState.coupons.forEach((item) => {
-            jwtAxios.post((URLpurchaseCoupon + item.id))
-                .then((response) => {
-                    notify.success(SysErrs.PURCHASE_SUCCESS)
-                    myStore().store.dispatch(resetCart())
-                })
-                .catch((error) => {
-                    notify.error("Issue with coupon '" + item.title + "'," + " Reason: " +
-                        errorHelper.getMSG(error))
-                })
-        })
+        if (myStore().store.getState().loggedState.client.clientType === "CUSTOMER") {
+            myStore().store.getState().cartState.coupons.forEach((item) => {
+                jwtAxios.post((URLpurchaseCoupon + item.id))
+                    .then((response) => {
+                        notify.success(SysErrs.PURCHASE_SUCCESS)
+                        myStore().store.dispatch(resetCart())
+                    })
+                    .catch((error) => {
+                        notify.error("Issue with coupon '" + item.title + "'," + " Reason: " +
+                            errorHelper.getMSG(error))
+                    })
+            })
+        } else {
+            notify.error(SysErrs.LOG_TO_PURCHASE)
+        }
     }
 
 
@@ -77,11 +81,11 @@ function CouponsCart(): JSX.Element {
                     <div className="cartDrawer" style={{ width: "450px" }}>
 
                         <div className="cartDrawerItems">
-                            {myStore().store.getState().cartState.coupons.map(item  =>
+                            {myStore().store.getState().cartState.coupons.map(item =>
                                 <CouponLine key={item.id} coupon={item} />
-                                
+
                             )}
-                            
+
                         </div>
 
 

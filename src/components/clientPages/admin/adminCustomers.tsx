@@ -43,7 +43,7 @@ function AdminCustomers(): JSX.Element {
                 notify.success(SysErrs.DATA_RECIVED)
             })
             .catch((error) => {
-                notify.error(errorHelper.getMSG(error));
+                
             })
     }, [Customer]);
 

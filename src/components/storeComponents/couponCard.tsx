@@ -3,6 +3,8 @@ import { addToCart } from "../../redux/cartState";
 import { myStore } from "../../redux/Store";
 import notify from "../../utils/Notify";
 import { SysErrs } from "../../utils/SysErrs";
+import TagIcon from "../../assets/img/tag-icon.png"
+import { SyntheticEvent } from "react";
 
 interface CouponCardProps {
     coupon: Coupon;
@@ -13,27 +15,27 @@ function CouponCard(props: CouponCardProps): JSX.Element {
     const CART_ITEMS_LIMIT = 7;
 
     function addTo() {
-        if (myStore().store.getState().loggedState.client.clientType === "CUSTOMER") {
-            if (myStore().store.getState().cartState.coupons.length < CART_ITEMS_LIMIT) {
-                myStore().store.dispatch(addToCart(props.coupon))
-            }
-            else {
-                notify.error(SysErrs.CART_LIMIT + CART_ITEMS_LIMIT)
-            }
-        } else {
-            notify.error(SysErrs.LOG_TO_PURCHASE)
+        if (myStore().store.getState().cartState.coupons.length < CART_ITEMS_LIMIT) {
+            myStore().store.dispatch(addToCart(props.coupon))
         }
+        else {
+            notify.error(SysErrs.CART_LIMIT + CART_ITEMS_LIMIT)
+        }
+
     }
 
     return (
         <div className="couponCard" >
 
             <div className="cardImg">
-                <img className="couponImg" src={props.coupon.image} />
+                <img className="couponImg" src={props.coupon.image} onError={(args: SyntheticEvent) => {
+                    (args
+                        .target as HTMLImageElement).src = TagIcon
+                }} />
             </div>
 
             <div className="cardInfo">
-                
+
                 <span style={{ fontSize: "small", fontStyle: "italic" }}>{props.coupon.startDate} - {props.coupon.endDate}</span>
                 <br /><br />
                 <span style={{ fontSize: "large", color: "#464D77" }}>{props.coupon.title}</span>
@@ -54,7 +56,7 @@ function CouponCard(props: CouponCardProps): JSX.Element {
 
             <div className="cardButton">
                 {props.coupon.amount <= 0 ?
-                    <button className="cardButtonButton" onClick={()=>{notify.error(SysErrs.OUT_OF_STOCK)}}>Add to Cart</button> :
+                    <button className="cardButtonButton" onClick={() => { notify.error(SysErrs.OUT_OF_STOCK) }}>Add to Cart</button> :
                     <button className="cardButtonButton" onClick={addTo} >Add to Cart</button>
                 }
             </div>
